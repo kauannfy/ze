@@ -4,7 +4,14 @@ function move_collide(argument0,argument1)
 	{
 		if (!place_meeting(x+sign(argument0),y,obj_colisor))
 		{
-			x += sign(argument0)
+			if (argument0 != 0 and argument1 != 0)
+			{
+				x += sign(argument0) * 0.4
+			}
+			else
+			{
+				x += sign(argument0)
+			}
 		}
 		else
 		{
@@ -16,7 +23,14 @@ repeat(abs(argument1))
 	{
 		if (!place_meeting(x,y + sign(argument1),obj_colisor))
 		{
-			y += sign(argument1)
+			if (argument0 != 0 and argument1 != 0)
+			{
+				y += sign(argument1) * 0.4
+			}
+			else
+			{
+				y += sign(argument1)
+			}
 		}
 		else
 		{
