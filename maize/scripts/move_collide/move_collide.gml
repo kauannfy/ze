@@ -1,3 +1,4 @@
+
 function move_collide(argument0,argument1)
 {
 	repeat(abs(argument0))

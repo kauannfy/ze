@@ -27,5 +27,24 @@ if (esq)
 	image_xscale = -1
 }
 
+if (dir != 0 and esq != 0)
+{
+	if (down)
+	{
+		vel = 0
+	}
+}
+else
+{
+	vel = 8
+}
+
+if (dir != 0 and esq != 0)
+{
+	if (up)
+	{
+		vel = 0
+	}
+}
 
 	
