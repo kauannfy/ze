@@ -36,8 +36,12 @@
   "name":"maize",
   "resources":[
     {"id":{"name":"obj_brawler","path":"objects/obj_brawler/obj_brawler.yy",},},
+    {"id":{"name":"obj_colisor","path":"objects/obj_colisor/obj_colisor.yy",},},
+    {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"move_collide","path":"scripts/move_collide/move_collide.yy",},},
     {"id":{"name":"spr_brawler","path":"sprites/spr_brawler/spr_brawler.yy",},},
+    {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
