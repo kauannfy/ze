@@ -26,3 +26,6 @@ if (esq)
 	move_collide(velh,velv)
 	image_xscale = -1
 }
+
+
+	
