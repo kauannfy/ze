@@ -8,7 +8,7 @@ velv = (down - up) * vel
 if (up)
 {
 	move_collide(velh,velv)
-	estado = "correndo"
+	estado = "correndob"
 }
 
 if (down)
@@ -31,6 +31,12 @@ if (esq)
 	estado = "correndo"
 }
 
+if (velv < -1)
+{
+	estado = "correndob"
+}
+
+
 if (!up) and (!down) and (!dir) and (!esq)
 {
 	estado = "parado"
@@ -44,6 +50,10 @@ switch (estado)
 	
 	case "correndo":
 	sprite_index = spr_brawler_run
+	break
+	
+	case "correndob":
+	sprite_index = spr_brawler_run_b
 	break
 }
 
