@@ -57,6 +57,12 @@ switch (estado)
 	break
 }
 
+if (room == Room2)
+{
+	if keyboard_check(vk_space)
+	room_goto_next()
+}
+
 
 
 	
