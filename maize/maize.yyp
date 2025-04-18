@@ -40,6 +40,7 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"move_collide","path":"scripts/move_collide/move_collide.yy",},},
+    {"id":{"name":"spr_brawler_run","path":"sprites/spr_brawler_run/spr_brawler_run.yy",},},
     {"id":{"name":"spr_brawler","path":"sprites/spr_brawler/spr_brawler.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
   ],
