@@ -12,6 +12,7 @@ function move_collide(argument0,argument1)
 			else
 			{
 				x += sign(argument0)
+				
 			}
 		}
 		else
