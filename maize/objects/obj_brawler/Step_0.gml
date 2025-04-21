@@ -45,15 +45,15 @@ if (!up) and (!down) and (!dir) and (!esq)
 switch (estado)
 {	
 	case "parado":
-	sprite_index = spr_brawler
+	sprite_index = spr_brawler_1
 	break
 	
 	case "correndo":
-	sprite_index = spr_brawler_run
+	sprite_index = spr_brawler_run_1
 	break
 	
 	case "correndob":
-	sprite_index = spr_brawler_run_b
+	sprite_index = spr_brawler_run_b_1
 	break
 }
 
