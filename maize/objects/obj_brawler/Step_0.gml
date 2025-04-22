@@ -1,3 +1,4 @@
+#region Movimentação
 var up = keyboard_check(ord("W"))
 var down = keyboard_check(ord("S"))
 var dir = keyboard_check(ord("D"))
@@ -41,7 +42,26 @@ if (velh = 0 and velv = 0)
 {
 	estado = "parado"
 }
+#endregion
 
+if distance_to_object(obj_item) <= rangeitem and keyboard_check(ord("M"))
+{
+	if x < obj_pedra.x
+	{
+		instance_destroy(obj_item)
+		instance_create_layer(x + 20, y+10,"Instances_1",obj_pedra,{sprite_index: spr_pedra})
+	}
+	if x > obj_pedra.x
+	{
+		instance_destroy(obj_item)
+		instance_create_layer(x - 20, y+10,"Instances_1",obj_pedra,{sprite_index: spr_pedra})
+	}
+}
+
+
+
+
+#region Troca de Sprites
 switch (estado)
 {	
 	case "parado":
@@ -56,12 +76,7 @@ switch (estado)
 	sprite_index = spr_brawler_run_b_1
 	break
 }
-
-if (room == Room2)
-{
-	if keyboard_check(vk_space)
-	room_goto_next()
-}
+#endregion
 
 
 
