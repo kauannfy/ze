@@ -37,7 +37,7 @@ if (velv < -1)
 }
 
 
-if (!up) and (!down) and (!dir) and (!esq)
+if (velh = 0 and velv = 0)
 {
 	estado = "parado"
 }
