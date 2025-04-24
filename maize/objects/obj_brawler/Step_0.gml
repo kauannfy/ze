@@ -3,6 +3,7 @@ var up = keyboard_check(ord("W"))
 var down = keyboard_check(ord("S"))
 var dir = keyboard_check(ord("D"))
 var esq = keyboard_check(ord("A"))
+
 velh = (dir - esq) * vel
 velv = (down - up) * vel
 
@@ -44,22 +45,15 @@ if (velh = 0 and velv = 0)
 }
 #endregion
 
-if distance_to_object(obj_item) <= rangeitem and keyboard_check(ord("M"))
+if distance_to_object(obj_item) <= rangeint and keyboard_check_pressed(ord("M"))
 {
-	if x < obj_pedra.x
-	{
-		instance_destroy(obj_item)
-		instance_create_layer(x + 20, y+10,"Instances_1",obj_pedra,{sprite_index: spr_pedra})
-	}
-	if x > obj_pedra.x
-	{
-		instance_destroy(obj_item)
-		instance_create_layer(x - 20, y+10,"Instances_1",obj_pedra,{sprite_index: spr_pedra})
-	}
+	obj_pedra.pegou = true
 }
 
-
-
+if distance_to_object(obj_portal) < rangeint and keyboard_check_pressed(ord("E"))
+{
+	obj_portal.seguindo = true
+}
 
 #region Troca de Sprites
 switch (estado)

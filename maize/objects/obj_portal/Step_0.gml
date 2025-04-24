@@ -20,33 +20,24 @@ if y < obj_brawler.y
 }
 #endregion
 #region Interação
-if distance_to_object(obj_brawler) < rangemin and keyboard_check(ord("E"))
-{
-	seguindo = true
-	estado = "correndo"
-}
-
-if (seguindo = true) and x < obj_brawler.x
+if seguindo = true and x < obj_brawler.x
 {
 	move_towards_point(obj_brawler.x -50, obj_brawler.y-1, vel)	
 }
 
-if (seguindo = true) and x > obj_brawler.x
+if seguindo = true and x > obj_brawler.x
 {
 	move_towards_point(obj_brawler.x +50, obj_brawler.y-1, vel)
 }
 
-if (seguindo = true)
+if keyboard_check_pressed(ord("X"))
 {
-	if keyboard_check(ord("X"))
-	{
-		seguindo = false
-		move_towards_point(obj_brawler.x +50, obj_brawler.y-1, 0)
-		estado = "parado"
-	}
+	seguindo = false
+	move_towards_point(obj_brawler.x +50, obj_brawler.y-1, 0)
+	estado = "parado"
 }
 
-if (!seguindo)
+if !seguindo
 {
 	estado = "parado"
 }

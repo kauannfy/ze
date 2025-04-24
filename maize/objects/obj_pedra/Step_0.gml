@@ -1,9 +1,14 @@
-if distance_to_object(obj_brawler) < rangemin
+if distance_to_object(obj_brawler) < rangemin and pegou = false and jogou = false
 {
 	estado = "perto"
 }
 
 if distance_to_object(obj_brawler) > rangemin
+{
+	estado = "longe"
+}
+
+if jogou = true
 {
 	estado = "longe"
 }
