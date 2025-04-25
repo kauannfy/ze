@@ -3,6 +3,7 @@ var up = keyboard_check(ord("W"))
 var down = keyboard_check(ord("S"))
 var dir = keyboard_check(ord("D"))
 var esq = keyboard_check(ord("A"))
+var dash = keyboard_check_pressed(ord("Q"))
 
 velh = (dir - esq) * vel
 velv = (down - up) * vel
@@ -19,18 +20,25 @@ if (down)
 	estado = "correndo"
 }
 
-if (dir)
+if (dir) and estado != "dash"
 {
 	move_collide(velh,velv)
 	image_xscale = 1
 	estado = "correndo"
 }
 
-if (esq)
+if (esq) and estado != "dash"
 {
 	move_collide(velh,velv)
 	image_xscale = -1
 	estado = "correndo"
+}
+
+if (dash)
+{
+	move_collide(velh,velv)
+	image_index = 0
+	estado = "dash"
 }
 
 if (velv < -1)
@@ -45,6 +53,7 @@ if (velh = 0 and velv = 0)
 }
 #endregion
 
+#region Interação
 if distance_to_object(obj_item) <= rangeint and keyboard_check_pressed(ord("M"))
 {
 	obj_pedra.pegou = true
@@ -54,6 +63,7 @@ if distance_to_object(obj_portal) < rangeint and keyboard_check_pressed(ord("E")
 {
 	obj_portal.seguindo = true
 }
+#endregion
 
 #region Troca de Sprites
 switch (estado)
@@ -68,6 +78,10 @@ switch (estado)
 	
 	case "correndob":
 	sprite_index = spr_brawler_run_b_1
+	break
+	
+	case "dash":
+	sprite_index = spr_brawler_roll
 	break
 }
 #endregion
