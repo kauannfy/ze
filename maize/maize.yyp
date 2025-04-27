@@ -54,6 +54,7 @@
     {"id":{"name":"move_collide","path":"scripts/move_collide/move_collide.yy",},},
     {"id":{"name":"spr_bg_menu","path":"sprites/spr_bg_menu/spr_bg_menu.yy",},},
     {"id":{"name":"spr_brawler_1","path":"sprites/spr_brawler_1/spr_brawler_1.yy",},},
+    {"id":{"name":"spr_brawler_b","path":"sprites/spr_brawler_b/spr_brawler_b.yy",},},
     {"id":{"name":"spr_brawler_roll","path":"sprites/spr_brawler_roll/spr_brawler_roll.yy",},},
     {"id":{"name":"spr_brawler_run_1","path":"sprites/spr_brawler_run_1/spr_brawler_run_1.yy",},},
     {"id":{"name":"spr_brawler_run_b_1","path":"sprites/spr_brawler_run_b_1/spr_brawler_run_b_1.yy",},},

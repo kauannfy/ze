@@ -1,18 +1,22 @@
-if distance_to_object(obj_brawler) < rangemin and pegou = false and jogou = false
+if distance_to_object(obj_brawler) < rangemin and pegou = false
 {
 	estado = "perto"
 }
 
-if distance_to_object(obj_brawler) > rangemin
+if distance_to_object(obj_brawler) > rangemin or speed >0
 {
 	estado = "longe"
 }
-
-if jogou = true
+if distance_to_object(obj_brawler) > rangemax
 {
-	estado = "longe"
+	speed = 0
 }
 
+if mouse_check_button_pressed(mb_left) and pegou = true
+{
+	instance_destroy(obj_pedra)
+	instance_create_layer(x,y,"Instances",obj_pedra, {speed: 12, direction: point_direction(x,y,mouse_x,mouse_y)})
+}
 
 switch (estado)
 {
