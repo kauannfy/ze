@@ -8,16 +8,28 @@ var dash = keyboard_check_pressed(ord("Q"))
 velh = (dir - esq) * vel
 velv = (down - up) * vel
 
-if (up)
+if (up) and estado != "dash"
 {
 	move_collide(velh,velv)
 	estado = "correndob"
+	if (dash) and candash = true
+	{
+		image_index = 0
+		estado = "dash"
+		vspeed -= 7
+	}
 }
 
-if (down)
+if (down) and estado != "dash"
 {
 	move_collide(velh,velv)
 	estado = "correndo"
+	if (dash) and candash = true
+	{
+		image_index = 0
+		estado = "dash"
+		vspeed += 7
+	}
 }
 
 if (dir) and estado != "dash"
@@ -25,6 +37,12 @@ if (dir) and estado != "dash"
 	move_collide(velh,velv)
 	image_xscale = 1
 	estado = "correndo"
+	if (dash) and candash = true
+	{
+		image_index = 0
+		estado = "dash"
+		hspeed += 9
+	}
 }
 
 if (esq) and estado != "dash"
@@ -32,16 +50,66 @@ if (esq) and estado != "dash"
 	move_collide(velh,velv)
 	image_xscale = -1
 	estado = "correndo"
+	if (dash) and candash = true
+	{
+		image_index = 0
+		estado = "dash"
+		hspeed -= 9
+	}
 }
 
-if (dash)
+if estado != "dash"
 {
-	move_collide(velh,velv)
-	image_index = 0
-	estado = "dash"
+	hspeed = 0
+	vspeed = 0
 }
 
-if (velv < -1)
+if velh >1
+{
+	if place_meeting(x +10,y,obj_colisor)
+	{
+		candash = false
+		hspeed = 0
+		vspeed = 0
+	}
+}
+if velh <-1
+{
+	if place_meeting(x -10,y,obj_colisor)
+	{
+		candash = false
+		hspeed = 0
+		vspeed = 0
+	}
+}
+
+if velv >1
+{
+	if place_meeting(x,y+10,obj_colisor)
+	{
+		candash = false
+		hspeed = 0
+		vspeed = 0
+	}
+}
+if velv <-1
+{
+	if place_meeting(x,y-10,obj_colisor)
+	{
+		candash = false
+		hspeed = 0
+		vspeed = 0
+	}
+}
+
+
+
+if !place_meeting(x,y,obj_colisor)
+{
+	candash = true
+}
+
+if (velv < -1) and estado != "dash"
 {
 	estado = "correndob"
 }
@@ -83,6 +151,7 @@ switch (estado)
 	case "dash":
 	sprite_index = spr_brawler_roll
 	break
+	
 }
 #endregion
 
