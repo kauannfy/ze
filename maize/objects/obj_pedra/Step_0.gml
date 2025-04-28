@@ -1,3 +1,5 @@
+depth = obj_brawler.depth +1
+
 if distance_to_object(obj_brawler) < rangemin and pegou = false
 {
 	estado = "perto"

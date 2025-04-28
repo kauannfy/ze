@@ -7,7 +7,7 @@ if (keyboard_check_pressed(ord("W"))){
 	margem = 0 
 }
 
-if (keyboard_check_pressed(ord("M"))){
+if (keyboard_check_pressed(ord("E"))){
 	menu[atual].funcao()
 }
 
