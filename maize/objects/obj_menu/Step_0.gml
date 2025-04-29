@@ -14,3 +14,4 @@ if (keyboard_check_pressed(ord("E"))){
 atual = clamp(atual, 0, array_length(menu) - 1)
 
 margem = lerp(margem, 20, .1)
+

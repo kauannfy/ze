@@ -51,6 +51,7 @@
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"move_collide","path":"scripts/move_collide/move_collide.yy",},},
+    {"id":{"name":"snd_mscfundo","path":"sounds/snd_mscfundo/snd_mscfundo.yy",},},
     {"id":{"name":"spr_bg_menu","path":"sprites/spr_bg_menu/spr_bg_menu.yy",},},
     {"id":{"name":"spr_brawler_1","path":"sprites/spr_brawler_1/spr_brawler_1.yy",},},
     {"id":{"name":"spr_brawler_b","path":"sprites/spr_brawler_b/spr_brawler_b.yy",},},

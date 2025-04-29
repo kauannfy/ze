@@ -41,3 +41,5 @@ opcao4 =
 menu = [opcao1, opcao2, opcao3, opcao4]
 atual = 0
 margem = 0
+
+audio_play_sound(snd_mscfundo, 10, 1)
