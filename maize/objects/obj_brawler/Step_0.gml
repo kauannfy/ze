@@ -7,7 +7,10 @@ var dash = keyboard_check(ord("Q"))
 
 velh = (dir - esq) * vel
 velv = (down - up) * vel
-
+if instance_exists(obj_dialogo)
+{
+	falando = true
+}
 if (up) and estado != "dash" 
 {
 	move_collide(velh,velv)
@@ -190,9 +193,40 @@ if distance_to_object(obj_item) <= rangeint and keyboard_check_pressed(ord("E"))
 	obj_pedra.pegou = true
 }
 
-if distance_to_object(obj_portal) < rangeint and keyboard_check_pressed(ord("E"))
+if distance_to_object(obj_npc) < rangeint and keyboard_check_pressed(ord("E")) and falando == false
 {
-	obj_portal.seguindo = true
+	var _npc = instance_nearest(x,y,obj_npc)
+	var _dialogo = instance_create_layer(x,y,"Instances_1",obj_dialogo)
+	_dialogo.npc_nome = _npc.nome
+}
+
+if falando == true
+{
+	vel = 0
+	hspeed = 0
+	vspeed = 0
+	if x > obj_npc.x
+	{
+		move_towards_point(obj_npc.x +80, obj_npc.y,2)
+		image_xscale = -1
+		estado = "correndo"
+	}
+	if x < obj_npc.x
+	{
+		move_towards_point(obj_npc.x -80, obj_npc.y,2)
+		image_xscale = 1
+		estado = "correndo"
+	}
+	if distance_to_point(obj_npc.x - 80,obj_npc.y) <5
+	{
+		vel = 0
+		move_towards_point(obj_npc.x -80, obj_npc.y,0)
+		estado = "parado"
+	}
+}
+else
+{
+	vel = 5
 }
 #endregion
 

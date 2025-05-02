@@ -1,5 +1,12 @@
-depth = obj_brawler.depth +1
-
+depth = obj_brawler.depth +2
+if obj_brawler.estado = "dash" and pegou = true
+{
+	image_alpha = 0
+}
+else
+{
+	image_alpha = 1
+}
 if distance_to_object(obj_brawler) < rangemin and pegou = false
 {
 	estado = "perto"
