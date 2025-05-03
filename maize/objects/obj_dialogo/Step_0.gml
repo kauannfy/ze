@@ -8,6 +8,7 @@ if mouse_check_button_pressed(mb_left)
 {
 	if caractere < string_length(texto_grid[# Infos.Texto, pagina])
 	{
+		audio_play_sound(snd_interaction, 1000, 0)
 		caractere = string_length(texto_grid[# Infos.Texto, pagina])
 	}
 	else
@@ -16,6 +17,7 @@ if mouse_check_button_pressed(mb_left)
 		caractere = 0
 		if pagina < ds_grid_height(texto_grid) - 1
 		{
+			audio_play_sound(snd_interaction, 1000, 0)
 			pagina ++
 		}
 		else
