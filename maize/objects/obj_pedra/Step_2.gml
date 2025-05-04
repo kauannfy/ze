@@ -1,3 +1,8 @@
+if distance_to_object(obj_brawler) <= obj_brawler.rangeint and obj_brawler.isholding = 0 and keyboard_check_pressed(ord("E"))
+{
+	pegou = true
+	obj_brawler.isholding +=1
+}
 
 #region Pegou
 if pegou = true and obj_brawler.image_xscale = 1

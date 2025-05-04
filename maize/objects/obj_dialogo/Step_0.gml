@@ -23,8 +23,11 @@ if mouse_check_button_pressed(mb_left)
 		else
 		{
 			obj_brawler.falando = false
+			if npc_nome = "azul"
+			{
+				obj_portal.seguindo = true
+			}
 			instance_destroy()
-			obj_portal.seguindo = true
 		}
 	}
 }

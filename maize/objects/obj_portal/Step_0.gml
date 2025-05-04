@@ -22,18 +22,19 @@ if y < obj_brawler.y
 #region Interação
 if seguindo = true and x < obj_brawler.x
 {
-	move_towards_point(obj_brawler.x -50, obj_brawler.y-1, vel)	
+	move_towards_point(obj_brawler.x -90, obj_brawler.y-1, vel)
 }
 
 if seguindo = true and x > obj_brawler.x
 {
-	move_towards_point(obj_brawler.x +50, obj_brawler.y-1, vel)
+	move_towards_point(obj_brawler.x +90, obj_brawler.y-1, vel)
+
 }
 
 if keyboard_check_pressed(ord("X"))
 {
 	seguindo = false
-	move_towards_point(obj_brawler.x +50, obj_brawler.y-1, 0)
+	move_towards_point(obj_brawler.x +90, obj_brawler.y-1, 0)
 	estado = "parado"
 }
 
@@ -42,7 +43,7 @@ if !seguindo
 	estado = "parado"
 }
 
-if distance_to_object(obj_brawler) < 10
+if distance_to_object(obj_brawler) < 42
 {
 	estado = "parado"
 	vel = 0
@@ -52,7 +53,7 @@ else
 	vel = 4
 }
 
-if distance_to_object(obj_brawler) < rangemin and seguindo = false
+if distance_to_object(obj_brawler) < rangemin and seguindo = false and obj_brawler.falando = false
 {
 	instance_create_layer(x-15, y -75, "Instances_1", obj_particula, {sprite_index: spr_inter})
 }

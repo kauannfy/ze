@@ -1,4 +1,4 @@
-depth = obj_brawler.depth +2
+depth = obj_brawler.depth +1
 if obj_brawler.estado = "dash" and pegou = true
 {
 	image_alpha = 0
@@ -23,8 +23,10 @@ if distance_to_object(obj_brawler) > rangemax
 
 if mouse_check_button_pressed(mb_left) and pegou = true
 {
-	instance_destroy(obj_pedra)
-	instance_create_layer(x,y,"Instances",obj_pedra, {speed: 12, direction: point_direction(x,y,mouse_x,mouse_y)})
+	pegou = false
+	obj_brawler.isholding -=1
+	direction = point_direction(x,y,mouse_x,mouse_y)
+	speed = 12
 }
 
 switch (estado)

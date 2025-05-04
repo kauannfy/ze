@@ -154,6 +154,7 @@ if !place_meeting(x,y,obj_colisor) and pode_dash = true
 {
 	candash = true
 }
+
 #endregion
 
 #region Cooldown do dash
@@ -188,11 +189,6 @@ if (velh = 0 and velv = 0)
 #endregion
 
 #region Interação
-if distance_to_object(obj_item) <= rangeint and keyboard_check_pressed(ord("E"))
-{
-	obj_pedra.pegou = true
-}
-
 if distance_to_object(obj_npc) < rangeint and keyboard_check_pressed(ord("E")) and falando == false
 {
 	var _npc = instance_nearest(x,y,obj_npc)
@@ -205,24 +201,63 @@ if falando == true
 	vel = 0
 	hspeed = 0
 	vspeed = 0
-	if x > obj_npc.x
+	var npc = instance_nearest(x,y,obj_npc)
+	
+	if y > npc.y
 	{
-		move_towards_point(obj_npc.x +80, obj_npc.y,2)
-		image_xscale = -1
-		estado = "correndo"
+		if x > npc.x
+		{
+			move_towards_point(npc.x +80, npc.y,2)
+			image_xscale = -1
+			estado = "correndob"
+			if distance_to_point(npc.x + 80,npc.y) <2
+			{
+				vel = 0
+				move_towards_point(npc.x -80, npc.y,0)
+				estado = "parado"
+			}
+		}
+		if x < npc.x
+		{
+			move_towards_point(npc.x -80, npc.y,2)
+			image_xscale = 1
+			estado = "correndob"
+			if distance_to_point(npc.x - 80,npc.y) <2
+			{
+				vel = 0
+				move_towards_point(npc.x -80, npc.y,0)
+				estado = "parado"
+			}
+		}
 	}
-	if x < obj_npc.x
+	if y < npc.y
 	{
-		move_towards_point(obj_npc.x -80, obj_npc.y,2)
-		image_xscale = 1
-		estado = "correndo"
+		if x > npc.x
+		{
+			move_towards_point(npc.x +80, npc.y+28,2)
+			image_xscale = -1
+			estado = "correndo"
+			if distance_to_point(npc.x + 80,npc.y+28) <2
+			{
+				vel = 0
+				move_towards_point(npc.x -80, npc.y+28,0)
+				estado = "parado"
+			}
+		}
+		if x < npc.x
+		{
+			move_towards_point(npc.x -80, npc.y+28,2)
+			image_xscale = 1
+			estado = "correndo"
+			if distance_to_point(npc.x - 80,npc.y+28) <2
+			{
+				vel = 0
+				move_towards_point(npc.x -80, npc.y+28,0)
+				estado = "parado"
+			}
+		}
 	}
-	if distance_to_point(obj_npc.x - 80,obj_npc.y) <5
-	{
-		vel = 0
-		move_towards_point(obj_npc.x -80, obj_npc.y,0)
-		estado = "parado"
-	}
+	
 }
 else
 {

@@ -2,9 +2,14 @@ function all_textos(){
 	switch npc_nome
 	{
 		case "azul":
-		ds_grid_add_text("O potencial elétrico nada mais é do que uma energia capaz de armazenar o shape dos nutrientes e buzotimo fififi",spr_portal_1,0,"Azul")
-		ds_grid_add_text("Sim tá certo amigão.",spr_brawler_1,1,"Vermelho")
-		ds_grid_add_text("Raleu amigão.",spr_portal_1,0,"Azul")
+		ds_grid_add_text("Hey, you!",spr_portal_p2,0,"Azul")
+		ds_grid_add_text("I'm a little lost.. could you please take me to the city?",spr_portal_p2,0,"Azul")
+		ds_grid_add_text("Um... sure. Follow me.",spr_brawler_p1,1,"Vermelho")
+		ds_grid_add_text("Thanks!",spr_portal_p1,0,"Azul")
+		break
+		
+		case "amarelo":
+		ds_grid_add_text("If you're looking for the city, it is not too far. Just head east from here.",spr_npc_amarelo,0,"Nigga")
 		break
 	}
 }

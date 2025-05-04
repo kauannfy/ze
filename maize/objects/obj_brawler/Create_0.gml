@@ -1,6 +1,7 @@
 vel = 5
 velh = 0
 velv = 0
+isholding = 0
 estado = "parado"
 rangeint = 50
 candash = true
